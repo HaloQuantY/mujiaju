@@ -12,101 +12,115 @@
 </head>
 
 <body>
-  <!-- 顶部和导航区域 -->
-  <header class="main-header">
-    <!-- 顶部区域 -->
-    <section class="top">
-      <div class="center-wrapper">
-        <p>服务热线：400-8888-888</p>
+  <!-- 顶部区域 -->
+  <section class="top">
+    <div class="center-wrapper">
+      <p>服务热线：400-8888-888</p>
+    </div>
+  </section>
+
+  <!-- 导航区域 -->
+  <section class="main-nav">
+    <div class="center-wrapper">
+      <h1>慕家居</h1>
+      <!-- 中央部分 -->
+      <nav class="center-nav">
+        <ul class="link-list">
+          <li>
+            <a href="#">
+              <div class="picbox">
+                <!-- 两张图片,鼠标不触碰时显示normal-img,触碰时显示hover-img -->
+                <img src="./assets/images/home-gry.png" alt="" class="normal-img">
+                <img src="./assets/images/home-white.png" alt="" class="hover-img">
+              </div>
+            </a>
+            <div class="wordbox">
+              网站首页
+            </div>
+          </li>
+          <li>
+            <a href="#">
+              <div class="picbox">
+                <img src="./assets/images/abouts-gry.png" alt="" class="normal-img">
+                <img src="./assets/images/abouts-white.png" alt="" class="hover-img">
+              </div>
+            </a>
+            <div class="wordbox">
+              关于我们
+            </div>
+          </li>
+          <li>
+            <a href="#">
+              <div class="picbox">
+                <img src="./assets/images/kefu-gry.png" alt="" class="normal-img">
+                <img src="./assets/images/kefu-white.png" alt="" class="hover-img">
+              </div>
+            </a>
+            <div class="wordbox">
+              网站首页
+            </div>
+          </li>
+          <li>
+            <a href="#">
+              <div class="picbox">
+                <img src="./assets/images/chanpin-gry.png" alt="" class="normal-img">
+                <img src="./assets/images/chanpin-white.png" alt="" class="hover-img">
+              </div>
+            </a>
+            <div class="wordbox">
+              网站首页
+            </div>
+          </li>
+          <li>
+            <a href="#">
+              <div class="picbox">
+                <img src="./assets/images/fuwu-gry.png" alt="" class="normal-img">
+                <img src="./assets/images/fuwu-white.png" alt="" class="hover-img">
+              </div>
+            </a>
+            <div class="wordbox">
+              网站首页
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <div class="header-search">
+        <input type="text" placeholder="请输入搜索内容">
+        <div class="search-btn"></div>
       </div>
-    </section>
-    <!-- 导航区域 -->
-    <section class="header-nav">
-      <div class="center-wrapper">
-        <h1>慕家居</h1>
-        <nav class="center-nav">
-          <ul class="link-list">
-            <li>
-              <a href="#">
-                <div class="picbox">
-                  <img src="./assets/images/home-gry.png" alt="" class="normal-img">
-                  <img src="./assets/images/home-white.png" alt="" class="hover-img">
-                </div>
-              </a>
-              <div class="wordbox">
-                网站首页
-              </div>
-            </li>
-            <li>
-              <a href="#">
-                <div class="picbox">
-                  <img src="./assets/images/abouts-gry.png" alt="" class="normal-img">
-                  <img src="./assets/images/abouts-white.png" alt="" class="hover-img">
-                </div>
-              </a>
-              <div class="wordbox">
-                关于我们
-              </div>
-            </li>
-            <li>
-              <a href="#">
-                <div class="picbox">
-                  <img src="./assets/images/kefu-gry.png" alt="" class="normal-img">
-                  <img src="./assets/images/kefu-white.png" alt="" class="hover-img">
-                </div>
-              </a>
-              <div class="wordbox">
-                网站首页
-              </div>
-            </li>
-            <li>
-              <a href="#">
-                <div class="picbox">
-                  <img src="./assets/images/chanpin-gry.png" alt="" class="normal-img">
-                  <img src="./assets/images/chanpin-white.png" alt="" class="hover-img">
-                </div>
-              </a>
-              <div class="wordbox">
-                网站首页
-              </div>
-            </li>
-            <li>
-              <a href="#">
-                <div class="picbox">
-                  <img src="./assets/images/fuwu-gry.png" alt="" class="normal-img">
-                  <img src="./assets/images/fuwu-white.png" alt="" class="hover-img">
-                </div>
-              </a>
-              <div class="wordbox">
-                网站首页
-              </div>
-            </li>
-          </ul>
-        </nav>
-        <div class="header-search">
-          <input type="text" placeholder="请输入搜索内容">
-          <div class="search-btn"></div>
-        </div>
-      </div>
-    </section>
-  </header>
+    </div>
+  </section>
 
   <!-- banner区域 -->
   <section class="banner">
-    <a href="#" class="banner-link">
-      <img src="./assets/images/banner01.png" alt="">
-    </a>
-    <ul>
-      <li class="current"><a href="#"></a></li>
-      <li><a href="#"></a></li>
-      <li><a href="#"></a></li>
-    </ul>
+    <!-- banner轮播图 -->
+    <div class="carousel">
+      <ul class="carousel-list">
+        <li data-n="0">
+          <img src="./assets/images/banner01.png" alt="">
+        </li>
+        <li data-n="1">
+          <img src="./assets/images/banner02.png" alt="">
+        </li>
+        <li data-n="2">
+          <img src="./assets/images/banner03.png" alt="">
+        </li>
+      </ul>
+      <!-- 底部小圆点 -->
+      <ol class="circles">
+        <li class="current" data-n="0"></li>
+        <li data-n="1"></li>
+        <li data-n="2"></li>
+      </ol>
+    </div>
   </section>
 
   <!-- 商品区域 -->
   <section class="production">
     <div class="center-wrapper">
-      <div class="production-content common-content">
+      <!-- 主体内容部分 -->
+      <div class="production-content">
+        <!-- 左右按键 -->
         <div class="left-btn btn">
           <img src="./assets/images/prev.png" alt="" class="normal">
           <img src="./assets/images/prev_active.png" alt="" class="active">
@@ -115,53 +129,102 @@
           <img src="./assets/images/next.png" alt="" class="normal">
           <img src="./assets/images/next_active.png" alt="" class="active">
         </div>
-        <ul>
-          <li>
-            <div class="picbox">
-              <img src="./assets/images/product01.png" alt="">
-            </div>
-            <div class="wordbox">
-              <p>时尚卫生间墙面颜色</p>
-              <p>2029装饰设计</p>
-            </div>
-          </li>
-          <li>
-            <div class="picbox">
-              <img src="./assets/images/product02.png" alt="">
-            </div>
-            <div class="wordbox">
-              <p>现代北欧风格厨房装</p>
-              <p>2029饰效果图</p>
-            </div>
-          </li>
-          <li>
-            <div class="picbox">
-              <img src="./assets/images/product03.png" alt="">
-            </div>
-            <div class="wordbox">
-              <p>现代时尚北欧风格卧</p>
-              <p>2029装饰设计</p>
-            </div>
-          </li>
-          <li>
-            <div class="picbox">
-              <img src="./assets/images/product04.png" alt="">
-            </div>
-            <div class="wordbox">
-              <p>130平简约现代北欧</p>
-              <p>2029装饰设计</p>
-            </div>
-          </li>
-          <li>
-            <div class="picbox">
-              <img src="./assets/images/product05.png" alt="">
-            </div>
-            <div class="wordbox">
-              <p>现代北欧风格小客厅</p>
-              <p>2029装饰设计</p>
-            </div>
-          </li>
-        </ul>
+        <!-- 展示窗口 -->
+        <div class="display-window">
+          <!-- 内容列表 -->
+          <ul class="production-content-list">
+            <li>
+              <div class="picbox">
+                <img src="./assets/images/product01.png" alt="">
+              </div>
+              <div class="wordbox">
+                <p>时尚卫生间墙面颜色</p>
+                <p>2029装饰设计</p>
+              </div>
+            </li>
+            <li>
+              <div class="picbox">
+                <img src="./assets/images/product02.png" alt="">
+              </div>
+              <div class="wordbox">
+                <p>现代北欧风格厨房装</p>
+                <p>2029饰效果图</p>
+              </div>
+            </li>
+            <li>
+              <div class="picbox">
+                <img src="./assets/images/product03.png" alt="">
+              </div>
+              <div class="wordbox">
+                <p>现代时尚北欧风格卧</p>
+                <p>2029装饰设计</p>
+              </div>
+            </li>
+            <li>
+              <div class="picbox">
+                <img src="./assets/images/product04.png" alt="">
+              </div>
+              <div class="wordbox">
+                <p>130平简约现代北欧</p>
+                <p>2029装饰设计</p>
+              </div>
+            </li>
+            <li>
+              <div class="picbox">
+                <img src="./assets/images/product05.png" alt="">
+              </div>
+              <div class="wordbox">
+                <p>现代北欧风格小客厅</p>
+                <p>2029装饰设计</p>
+              </div>
+            </li>
+            <li>
+              <div class="picbox">
+                <img src="./assets/images/product06.png" alt="">
+              </div>
+              <div class="wordbox">
+                <p>现代北欧风格小客厅</p>
+                <p>2029装饰设计</p>
+              </div>
+            </li>
+            <li>
+              <div class="picbox">
+                <img src="./assets/images/product07.png" alt="">
+              </div>
+              <div class="wordbox">
+                <p>现代北欧风格小客厅</p>
+                <p>2029装饰设计</p>
+              </div>
+            </li>
+            <li>
+              <div class="picbox">
+                <img src="./assets/images/product08.png" alt="">
+              </div>
+              <div class="wordbox">
+                <p>现代北欧风格小客厅</p>
+                <p>2029装饰设计</p>
+              </div>
+            </li>
+            <li>
+              <div class="picbox">
+                <img src="./assets/images/product09.png" alt="">
+              </div>
+              <div class="wordbox">
+                <p>现代北欧风格小客厅</p>
+                <p>2029装饰设计</p>
+              </div>
+            </li>
+            <li>
+              <div class="picbox">
+                <img src="./assets/images/product10.png" alt="">
+              </div>
+              <div class="wordbox">
+                <p>现代北欧风格小客厅</p>
+                <p>2029装饰设计</p>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -220,13 +283,15 @@
   <!-- 精品推荐区域 -->
   <section class="recommend">
     <div class="center-wrapper">
+      <!-- 头部标题部分 -->
       <div class="recommend-head common-head">
         <div class="common-head-wrapper">
           <h2>精品推荐</h2>
           <p>Boutique recommendation</p>
         </div>
       </div>
-      <div class="recommend-content common-content">
+      <!-- 主体内容部分 -->
+      <div class="recommend-content">
         <div class="left-btn btn">
           <img src="./assets/images/prev.png" alt="" class="normal">
           <img src="./assets/images/prev_active.png" alt="" class="active">
@@ -235,32 +300,83 @@
           <img src="./assets/images/next.png" alt="" class="normal">
           <img src="./assets/images/next_active.png" alt="" class="active">
         </div>
-        <ul>
-          <li>
-            <div class="picbox">
-              <img src="./assets/images/recommend1.png" alt="">
-            </div>
-            <div class="wordbox">
-              轻奢风格样板房客厅色彩搭配装修设计
-            </div>
-          </li>
-          <li>
-            <div class="picbox">
-              <img src="./assets/images/recommend2.png" alt="">
-            </div>
-            <div class="wordbox">
-              简约美式风格卧室衣柜设计
-            </div>
-          </li>
-          <li>
-            <div class="picbox">
-              <img src="./assets/images/recommend3.png" alt="">
-            </div>
-            <div class="wordbox">
-              轻奢风格L型厨房装修设计
-            </div>
-          </li>
-        </ul>
+        <!-- 使用display-window包裹,隐藏溢出部分 -->
+        <div class="display-window">
+          <ul class="recommend-content-list">
+            <li>
+              <div class="picbox">
+                <img src="./assets/images/recommend1.png" alt="">
+              </div>
+              <div class="wordbox">
+                轻奢风格样板房客厅色彩搭配装修设计
+              </div>
+            </li>
+            <li>
+              <div class="picbox">
+                <img src="./assets/images/recommend2.png" alt="">
+              </div>
+              <div class="wordbox">
+                简约美式风格卧室衣柜设计
+              </div>
+            </li>
+            <li>
+              <div class="picbox">
+                <img src="./assets/images/recommend3.png" alt="">
+              </div>
+              <div class="wordbox">
+                轻奢风格L型厨房装修设计
+              </div>
+            </li>
+            <li>
+              <div class="picbox">
+                <img src="./assets/images/recommend4.png" alt="">
+              </div>
+              <div class="wordbox">
+                轻奢风格L型厨房装修设计
+              </div>
+            </li>
+            <li>
+              <div class="picbox">
+                <img src="./assets/images/recommend5.png" alt="">
+              </div>
+              <div class="wordbox">
+                轻奢风格L型厨房装修设计
+              </div>
+            </li>
+            <li>
+              <div class="picbox">
+                <img src="./assets/images/recommend6.png" alt="">
+              </div>
+              <div class="wordbox">
+                轻奢风格L型厨房装修设计
+              </div>
+            </li>
+            <li>
+              <div class="picbox">
+                <img src="./assets/images/recommend7.png" alt="">
+              </div>
+              <div class="wordbox">
+                轻奢风格L型厨房装修设计
+              </div>
+            </li>
+            <li>
+              <div class="picbox">
+                <img src="./assets/images/recommend8.png" alt="">
+              </div>
+              <div class="wordbox">
+                轻奢风格L型厨房装修设计
+              </div>
+            </li>
+            <li>
+              <div class="picbox">
+                <img src="./assets/images/recommend9.png" alt="">
+              </div>
+              <div class="wordbox">
+                轻奢风格L型厨房装修设计
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -301,6 +417,7 @@
     </div>
   </section>
 
+  <!-- 页脚部分 -->
   <footer>
     <div class="center-wrapper">
       <h2>慕家居</h2>
@@ -311,9 +428,13 @@
       </ul>
     </div>
     <div class="copyright">
-      Copyright © 2020 imooc.com All Rights Reserved | 京ICP备 
+      Copyright © 2020 imooc.com All Rights Reserved | 京ICP备
     </div>
   </footer>
+
+  <script src="assets/js/banner_carousel.js"></script>
+  <script src="assets/js/production_scroll.js"></script>
+  <script src="assets/js/recommend_scroll.js"></script>
 </body>
 
 </html>

@@ -108,12 +108,13 @@ body {
 .center-wrapper {
   margin: 0 auto;
   width: 1200px;
+  min-width: 1200px;
 }
-.main-header .top {
+.top {
   height: 40px;
   background: #0058aa;
 }
-.main-header .top .center-wrapper p {
+.top .center-wrapper p {
   float: right;
   width: 211px;
   height: 40px;
@@ -121,16 +122,16 @@ body {
   font-size: 17px;
   color: #ffffff;
 }
-.main-header .header-nav {
+.main-nav {
   height: 121px;
 }
-.main-header .header-nav .center-wrapper {
+.main-nav .center-wrapper {
   position: relative;
   overflow: hidden;
   padding-top: 19px;
   padding-bottom: 11px;
 }
-.main-header .header-nav .center-wrapper h1 {
+.main-nav .center-wrapper h1 {
   float: left;
   width: 192px;
   height: 91px;
@@ -140,43 +141,42 @@ body {
   line-height: 91px;
   cursor: pointer;
 }
-.main-header .header-nav .center-wrapper .center-nav {
+.main-nav .center-wrapper .center-nav {
   float: left;
 }
-.main-header .header-nav .center-wrapper .center-nav .link-list li {
+.main-nav .center-wrapper .center-nav ul.link-list li {
   float: left;
   margin-right: 61px;
   width: 64px;
   height: 91px;
 }
-.main-header .header-nav .center-wrapper .center-nav .link-list li:last-child {
+.main-nav .center-wrapper .center-nav ul.link-list li:last-child {
   margin-right: 0;
 }
-.main-header .header-nav .center-wrapper .center-nav .link-list li a .picbox {
+.main-nav .center-wrapper .center-nav ul.link-list li .wordbox {
+  font-size: 16px;
+  color: #545454;
+}
+.main-nav .center-wrapper .center-nav ul.link-list li a .picbox {
   position: relative;
   left: 50%;
   margin-left: -25px;
   margin-bottom: 20px;
   width: 50px;
   height: 50px;
-  text-align: center;
 }
-.main-header .header-nav .center-wrapper .center-nav .link-list li a .picbox img {
+.main-nav .center-wrapper .center-nav ul.link-list li a .picbox img {
+  position: relative;
   width: 33px;
   height: 33px;
-}
-.main-header .header-nav .center-wrapper .center-nav .link-list li a .picbox .normal-img {
-  position: relative;
-  top: 50%;
-  margin-top: -17px;
-}
-.main-header .header-nav .center-wrapper .center-nav .link-list li a .picbox .hover-img {
-  display: none;
-  position: absolute;
   top: 50%;
   left: 50%;
   margin-top: -17px;
   margin-left: -17px;
+}
+.main-nav .center-wrapper .center-nav ul.link-list li a .picbox img.hover-img {
+  display: none;
+  position: absolute;
 }
 @keyframes breath {
   from {
@@ -186,22 +186,18 @@ body {
     transform: scale(1.1);
   }
 }
-.main-header .header-nav .center-wrapper .center-nav .link-list li a:hover > .picbox {
+.main-nav .center-wrapper .center-nav ul.link-list li a:hover > .picbox {
   animation: breath 0.4s ease 0s infinite alternate;
   background: #0058aa;
   border-radius: 50%;
 }
-.main-header .header-nav .center-wrapper .center-nav .link-list li a:hover > .picbox .normal-img {
+.main-nav .center-wrapper .center-nav ul.link-list li a:hover > .picbox .normal-img {
   display: none;
 }
-.main-header .header-nav .center-wrapper .center-nav .link-list li a:hover > .picbox .hover-img {
+.main-nav .center-wrapper .center-nav ul.link-list li a:hover > .picbox .hover-img {
   display: block;
 }
-.main-header .header-nav .center-wrapper .center-nav .link-list li .wordbox {
-  font-size: 16px;
-  color: #545454;
-}
-.main-header .header-nav .center-wrapper .header-search {
+.main-nav .center-wrapper .header-search {
   position: absolute;
   top: 50%;
   right: 0;
@@ -210,7 +206,7 @@ body {
   height: 39px;
   border: 1px solid #d3d3d3;
 }
-.main-header .header-nav .center-wrapper .header-search input {
+.main-nav .center-wrapper .header-search input {
   float: left;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -223,7 +219,7 @@ body {
   border: none;
   outline: none;
 }
-.main-header .header-nav .center-wrapper .header-search .search-btn {
+.main-nav .center-wrapper .header-search .search-btn {
   float: left;
   width: 48px;
   height: 39px;
@@ -237,12 +233,28 @@ body {
   position: relative;
   width: 100%;
   min-width: 1200px;
-  height: 650px;
 }
-.banner .banner-link img {
+.banner .carousel {
+  overflow: hidden;
+  position: relative;
   width: 100%;
 }
-.banner ul {
+.banner .carousel .carousel-list {
+  overflow: hidden;
+  left: 0;
+  width: 400%;
+  transform: translateX(0);
+  transition: transform 0.5s ease 0s;
+}
+.banner .carousel .carousel-list li {
+  float: left;
+  width: 25%;
+  cursor: pointer;
+}
+.banner .carousel .carousel-list li img {
+  width: 100%;
+}
+.banner .carousel .circles {
   position: absolute;
   bottom: 50px;
   left: 50%;
@@ -250,27 +262,34 @@ body {
   width: 42px;
   height: 10px;
 }
-.banner ul li {
+.banner .carousel .circles li {
   float: left;
   margin-right: 6px;
-  background-color: #fff;
-  border-radius: 50%;
-}
-.banner ul li a {
-  display: block;
   width: 10px;
   height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
 }
-.banner ul li:last-child {
+.banner .carousel .circles li:last-child {
   margin-right: 0;
 }
-.banner ul li.current {
+.banner .carousel .circles li.current {
   background-color: #0058aa;
 }
-.common-content {
-  position: relative;
+.production {
+  height: 304px;
 }
-.common-content .btn {
+.production .center-wrapper {
+  position: relative;
+  padding-top: 38px;
+  padding-bottom: 32px;
+}
+.production .center-wrapper .production-content {
+  position: relative;
+  overflow: hidden;
+}
+.production .center-wrapper .production-content .btn {
   position: absolute;
   top: 50%;
   margin-top: -24px;
@@ -278,30 +297,36 @@ body {
   height: 48px;
   cursor: pointer;
 }
-.common-content .btn .active {
+.production .center-wrapper .production-content .btn .active {
   position: absolute;
   top: 0;
   left: 0;
   display: none;
 }
-.common-content .btn.left-btn {
+.production .center-wrapper .production-content .btn.left-btn {
   left: 0;
 }
-.common-content .btn.right-btn {
+.production .center-wrapper .production-content .btn.right-btn {
   right: 0;
 }
-.common-content .btn:hover .normal {
+.production .center-wrapper .production-content .btn:hover .normal {
   display: none;
 }
-.common-content .btn:hover .active {
+.production .center-wrapper .production-content .btn:hover .active {
   display: block;
 }
-.common-content ul {
+.production .center-wrapper .production-content .display-window {
   overflow: hidden;
+  margin: 0 auto;
   width: 1055px;
-  padding: 0 72.5px;
 }
-.common-content ul li {
+.production .center-wrapper .production-content .display-window .production-content-list {
+  position: relative;
+  left: 0;
+  width: 6000px;
+  transition: left 0.3s ease 0s;
+}
+.production .center-wrapper .production-content .display-window .production-content-list li {
   float: left;
   margin-right: 50px;
   width: 171px;
@@ -309,15 +334,8 @@ body {
   font-size: 18px;
   color: #838383;
 }
-.common-content ul li:last-child {
+.production .center-wrapper .production-content .display-window .production-content-list li:last-child {
   margin-right: 0;
-}
-.production {
-  height: 304px;
-}
-.production .center-wrapper {
-  padding-top: 38px;
-  padding-bottom: 32px;
 }
 .common-head {
   position: relative;
@@ -522,28 +540,64 @@ body {
   background: #eff0f4;
 }
 .recommend .center-wrapper {
+  position: relative;
   padding-top: 70px;
   padding-bottom: 68px;
 }
 .recommend .center-wrapper .recommend-head {
   margin-bottom: 40px;
 }
-.recommend .center-wrapper .recommend-content ul {
-  overflow: hidden;
-  width: 1081px;
-  padding: 0 59.5px;
+.recommend .center-wrapper .recommend-content {
+  position: relative;
 }
-.recommend .center-wrapper .recommend-content ul li {
+.recommend .center-wrapper .recommend-content .btn {
+  position: absolute;
+  top: 50%;
+  margin-top: -24px;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+}
+.recommend .center-wrapper .recommend-content .btn .active {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+.recommend .center-wrapper .recommend-content .btn.left-btn {
+  left: 0;
+}
+.recommend .center-wrapper .recommend-content .btn.right-btn {
+  right: 0;
+}
+.recommend .center-wrapper .recommend-content .btn:hover .normal {
+  display: none;
+}
+.recommend .center-wrapper .recommend-content .btn:hover .active {
+  display: block;
+}
+.recommend .center-wrapper .recommend-content .display-window {
+  overflow: hidden;
+  margin: 0 auto;
+  width: 1081px;
+}
+.recommend .center-wrapper .recommend-content .display-window .recommend-content-list {
+  position: relative;
+  left: 0;
+  width: 6000px;
+  transition: left 0.3s ease 0s;
+}
+.recommend .center-wrapper .recommend-content .display-window .recommend-content-list li {
   position: relative;
   float: left;
   margin-right: 23px;
   width: 345px;
   height: 326px;
 }
-.recommend .center-wrapper .recommend-content ul li:last-child {
+.recommend .center-wrapper .recommend-content .display-window .recommend-content-list li:last-child {
   margin-right: 0;
 }
-.recommend .center-wrapper .recommend-content ul li .wordbox {
+.recommend .center-wrapper .recommend-content .display-window .recommend-content-list li .wordbox {
   box-sizing: border-box;
   position: absolute;
   bottom: 0;

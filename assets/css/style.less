@@ -1,226 +1,268 @@
-@import "base.less";
-.main-header {
-  .top {
-    height: 40px;
-    background: #0058aa;
-    .center-wrapper {
-      p {
-        float: right;
-        width: 211px;
-        height: 40px;
-        line-height: 40px;
-        font-size: 17px;
-        color: #ffffff;
-      }
+// 引入基础样式表
+@import "base.less"; 
+
+// top区域
+.top {
+  height: 40px;
+  background: #0058aa;
+  .center-wrapper {
+    p {
+      float: right;
+      width: 211px;
+      height: 40px;
+      line-height: 40px;
+      font-size: 17px;
+      color: #ffffff;
     }
   }
-  .header-nav {
-    height: 121px;
-    .center-wrapper {
-      position: relative;
-      overflow: hidden;
-      padding-top: 19px;
-      padding-bottom: 11px;
-      h1 {
-        float: left;
-        width: 192px;
-        height: 91px;
-        margin-right: 109px;
-        font-size: 64px;
-        color: #0058aa;
-        line-height: 91px;
-        cursor: pointer;
-      }
-      .center-nav {
-        float: left;
-        .link-list {
-          li {
-            float: left;
-            margin-right: 61px;
-            width: 64px;
-            height: 91px;
-            &:last-child {
-              margin-right: 0;
-            }
-            a {
-              .picbox {
+}
+
+// 顶部导航栏
+.main-nav {
+  height: 121px;
+  .center-wrapper {
+    position: relative;
+    overflow: hidden;
+    padding-top: 19px;
+    padding-bottom: 11px;
+    h1 {
+      float: left;
+      width: 192px;
+      height: 91px;
+      margin-right: 109px;
+      font-size: 64px;
+      color: #0058aa;
+      line-height: 91px;
+      cursor: pointer;
+    }
+    // 中央导航部分
+    .center-nav {
+      float: left;
+      ul.link-list {
+        li {
+          float: left;
+          margin-right: 61px;
+          width: 64px;
+          height: 91px;
+          &:last-child {
+            margin-right: 0;
+          }
+          .wordbox {
+            font-size: 16px;
+            color: #545454;
+          }
+          a {
+            .picbox {
+              // 对picbox位置进行微调居中
+              position: relative;
+              left: 50%;
+              margin-left: -25px;
+              margin-bottom: 20px;
+              // 设置尺寸
+              width: 50px;
+              height: 50px;
+              img {
                 position: relative;
+                width: 33px;
+                height: 33px;
+                top: 50%;
                 left: 50%;
-                margin-left: -25px;
-                margin-bottom: 20px;
-                width: 50px;
-                height: 50px;
-                text-align: center;
-                img {
-                  width: 33px;
-                  height: 33px;
-                }
-                .normal-img {
-                  position: relative;
-                  top: 50%;
-                  margin-top: -17px;
-                }
-                .hover-img {
+                margin-top: -17px;
+                margin-left: -17px;
+                // 对悬浮显示图片进行隐藏,并且绝对定位和正常图片同位置
+                &.hover-img {
                   display: none;
                   position: absolute;
-                  top: 50%;
-                  left: 50%;
-                  margin-top: -17px;
-                  margin-left: -17px;
-                }
-              }
-              @keyframes breath {
-                from {
-                  transform: scale(1);
-                }
-                to {
-                  transform: scale(1.1);
-                }
-              }
-              &:hover > .picbox {
-                animation: breath 0.4s ease 0s infinite alternate;
-                background: #0058aa;
-                border-radius: 50%;
-                .normal-img {
-                  display: none;
-                }
-                .hover-img {
-                  display: block;
                 }
               }
             }
-            .wordbox {
-              font-size: 16px;
-              color: #545454;
+            // 定义呼吸动画
+            @keyframes breath {
+              from {
+                transform: scale(1);
+              }
+              to {
+                transform: scale(1.1);
+              }
+            }
+            // a标签鼠标悬浮时picbox元素样式
+            &:hover > .picbox {
+              // 添加呼吸动画
+              animation: breath 0.4s ease 0s infinite alternate;
+              background: #0058aa;
+              border-radius: 50%;
+              // 切换显示图片至hover-img
+              .normal-img {
+                display: none;
+              }
+              .hover-img {
+                display: block;
+              }
             }
           }
         }
       }
-      .header-search {
-        position: absolute;
-        top: 50%;
-        right: 0;
-        margin-top: -20px;
-        width: 277px;
+    }
+    .header-search {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      margin-top: -20px;
+      width: 277px;
+      height: 39px;
+      border: 1px solid #d3d3d3;
+      input {
+        float: left;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 15px;
+        width: 214px;
+        height: 17px;
+        line-height: 17px;
+        font-size: 14px;
+        color: #545454;
+        border: none;
+        outline: none;
+      }
+      .search-btn {
+        float: left;
+        width: 48px;
         height: 39px;
-        border: 1px solid #d3d3d3;
-        input {
-          float: left;
-          padding-top: 10px;
-          padding-bottom: 10px;
-          padding-left: 15px;
-          width: 214px;
-          height: 17px;
-          line-height: 17px;
-          font-size: 14px;
-          color: #545454;
-          border: none;
-          outline: none;
-        }
-        .search-btn {
-          float: left;
-          width: 48px;
-          height: 39px;
-          background-image: url("../images/search.png");
-          background-color: #0058aa;
-          background-repeat: no-repeat;
-          background-position: center;
-          cursor: pointer;
-        }
+        background-image: url("../images/search.png");
+        background-color: #0058aa;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
       }
     }
   }
 }
+
+// banner区域
 .banner {
   position: relative;
   width: 100%;
   min-width: 1200px;
-  height: 650px;
-  .banner-link {
-    img {
-      width: 100%;
+  // banner轮播图
+  .carousel {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    .carousel-list {
+      overflow: hidden;
+      left: 0;
+      // 设置ul为4倍页面宽度
+      width: 400%;
+      // 设置初始位移为0,保证点击小圆点能够触发过渡效果
+      transform: translateX(0);
+      transition: transform .5s ease 0s;
+      li {
+        float: left;
+        // li为页面宽度
+        width: 25%;
+        cursor: pointer;
+        img {
+          width: 100%;
+        }
+      }
     }
-  }
-  ul {
-    position: absolute;
-    bottom: 50px;
-    left: 50%;
-    margin-left: -21px;
-    width: 42px;
-    height: 10px;
-    li {
-      float: left;
-      margin-right: 6px;
-      background-color: #fff;
-      border-radius: 50%;
-      a {
-        display: block;
+    // 轮播图小圆点
+    .circles {
+      // 设置居中显示
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+      margin-left: -21px;
+      width: 42px;
+      height: 10px;
+      // 小圆点li
+      li {
+        float: left;
+        margin-right: 6px;
         width: 10px;
         height: 10px;
+        background-color: #fff;
+        border-radius: 50%;
+        cursor: pointer;
+        &:last-child {
+          margin-right: 0;
+        }
+        // 获得current类的小圆点改变背景颜色
+        &.current {
+          background-color: #0058aa;
+        }
       }
-    }
-    li:last-child {
-      margin-right: 0;
-    }
-    li.current {
-      background-color: #0058aa;
     }
   }
 }
-.common-content {
-  position: relative;
-  .btn {
-    position: absolute;
-    top: 50%;
-    margin-top: -24px;
-    width: 48px;
-    height: 48px;
-    cursor: pointer;
-    .active {
-      position: absolute;
-      top: 0;
-      left: 0;
-      display: none;
-    }
-    &.left-btn {
-      left: 0;
-    }
-    &.right-btn {
-      right: 0;
-    }
-    &:hover {
-      .normal {
-        display: none;
-      }
-      .active {
-        display: block;
-      }
-    }
-  }
-  ul {
-    overflow: hidden;
-    width: 1055px;
-    padding: 0 72.5px;
-    li {
-      float: left;
-      margin-right: 50px;
-      width: 171px;
-      height: 234px;
-      font-size: 18px;
-      color: #838383;
-    }
-    li:last-child {
-      margin-right: 0;
-    }
-  }
-}
+
+// 商品区域
 .production {
   height: 304px;
   .center-wrapper {
+    position: relative;
     padding-top: 38px;
     padding-bottom: 32px;
+    .production-content {
+      position: relative;
+      overflow: hidden;
+      // 左右按钮
+      .btn {
+        position: absolute;
+        top: 50%;
+        margin-top: -24px;
+        width: 48px;
+        height: 48px;
+        cursor: pointer;
+        .active {
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: none;
+        }
+        &.left-btn {
+          left: 0;
+        }
+        &.right-btn {
+          right: 0;
+        }
+        &:hover {
+          .normal {
+            display: none;
+          }
+          .active {
+            display: block;
+          }
+        }
+      }
+      // 展示窗口
+      .display-window {
+        overflow: hidden;
+        margin: 0 auto;
+        width: 1055px;
+        .production-content-list {
+          position: relative;
+          left: 0;
+          width: 6000px;
+          transition: left .3s ease 0s;
+          li {
+            float: left;
+            margin-right: 50px;
+            width: 171px;
+            height: 234px;
+            font-size: 18px;
+            color: #838383;
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
   }
 }
+
+// 公共样式, 头部标题样式
 .common-head {
   position: relative;
   margin: 0 auto;
@@ -257,6 +299,8 @@
     }
   }
 }
+
+// 关于我们
 .about-us {
   height: 488px;
   .center-wrapper {
@@ -421,47 +465,89 @@
     }
   }
 }
+
+// 精品推荐
 .recommend {
   height: 590px;
   background: #eff0f4;
   .center-wrapper {
+    position: relative;
     padding-top: 70px;
     padding-bottom: 68px;
     .recommend-head {
       margin-bottom: 40px;
     }
     .recommend-content {
-      ul {
-        overflow: hidden;
-        width: 1081px;
-        padding: 0 59.5px;
-        li {
-          position: relative;
-          float: left;
-          margin-right: 23px;
-          width: 345px;
-          height: 326px;
-          &:last-child {
-            margin-right: 0;
+      position: relative;
+      // 左右按钮
+      .btn {
+        position: absolute;
+        top: 50%;
+        margin-top: -24px;
+        width: 48px;
+        height: 48px;
+        cursor: pointer;
+        .active {
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: none;
+        }
+        &.left-btn {
+          left: 0;
+        }
+        &.right-btn {
+          right: 0;
+        }
+        &:hover {
+          .normal {
+            display: none;
           }
-          .wordbox {
-            box-sizing: border-box;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 45px;
-            padding-left: 20px;
-            line-height: 45px;
-            font-size: 16px;
-            color: #ffffff;
-            background: rgba(0, 0, 0, 0.5);
+          .active {
+            display: block;
+          }
+        }
+      }
+      // 展示窗口
+      .display-window {
+        overflow: hidden;
+        margin: 0 auto;
+        width: 1081px;
+        .recommend-content-list {
+          position: relative;
+          left: 0;
+          width: 6000px;
+          transition: left .3s ease 0s;
+          li {
+            position: relative;
+            float: left;
+            margin-right: 23px;
+            width: 345px;
+            height: 326px;
+            &:last-child {
+              margin-right: 0;
+            }
+            .wordbox {
+              box-sizing: border-box;
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              height: 45px;
+              padding-left: 20px;
+              line-height: 45px;
+              font-size: 16px;
+              color: #ffffff;
+              background: rgba(0, 0, 0, 0.5);
+            }
           }
         }
       }
     }
   }
 }
+
+// 新闻中心
 .news {
   height: 545px;
   .center-wrapper {
@@ -558,6 +644,8 @@
     }
   }
 }
+
+// 页脚
 footer {
   height: 240px;
   background: #06142f;
